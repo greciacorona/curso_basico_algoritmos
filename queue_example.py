@@ -32,6 +32,11 @@ def extract():
     elif front > rear:
         print("Queue is empty, there's nothing to delete")
         front = rear = -1
+    elif front == rear:
+        print(f"{queue[front]} was deleted")
+        queue[front] = ""
+        print("Queue is now empty")
+        front = rear = -1
     else:
         print(f"{queue[front]} was deleted")
         queue[front] = ""
@@ -45,7 +50,7 @@ def run():
     insert("x4")
     insert("x5")
     insert("x6")
-    print(f"{queue} front: {front} rear: {rear}\n")
+    print(f'{queue} front: {front} rear: {rear}')
 
     extract()
     print(f"{queue} front: {front} rear: {rear}\n")
