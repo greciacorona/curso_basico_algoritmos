@@ -4,16 +4,14 @@
 # with input
 
 queue = ["","","","",""]
-size = 5
 front = -1
 rear = -1
 
 
 def insert(value):
-    global queue
-    global size
-    global front
-    global rear
+    global queue, front, rear
+    # global front
+    # global rear
     if rear == len(queue)-1:
         print("Queue is full")
     else:
@@ -25,10 +23,9 @@ def insert(value):
 
 
 def extract():
-    global queue
-    global size
-    global front
-    global rear
+    global queue, front, rear
+    # global front
+    # global rear
     if front == -1:
         print("Queue is empty")
     elif front > rear:
@@ -61,10 +58,8 @@ def run():
         if option == 1:
             value = input("Client's name: ")
             insert(value)
-            # print(f"{queue} front: {front} rear: {rear}\n")   
         elif option == 2:
             extract()
-            # print(f"{queue} front: {front} rear: {rear}\n")   
         elif option == 3:
             print(f"{queue} front: {front} rear: {rear}\n")   
         elif option == 4:
@@ -72,6 +67,7 @@ def run():
             break
         else:
             print("Incorrect Option")
-            
+
+
 if __name__ == "__main__":
     run()
